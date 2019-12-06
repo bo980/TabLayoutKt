@@ -15,7 +15,6 @@ import androidx.annotation.Nullable;
 import com.liang.tabs.BadgeView;
 
 import com.liang.tabs.TabImp;
-import com.liang.tabs.TabLayout;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -241,6 +241,18 @@ class TabLayout : HorizontalScrollView {
 
     private var itemDecoration: ItemDecoration? = null
 
+    fun addItemDecoration(itemDecoration: ItemDecoration?) {
+        this.itemDecoration = itemDecoration
+        repeat(slidingTabIndicator.childCount) {
+            val child = slidingTabIndicator.getChildAt(it)
+            if (child is Tab) {
+                child.tabDecoration = child.tabDecoration ?: itemDecoration
+            }
+        }
+
+        applyModeAndGravity()
+    }
+
     constructor(context: Context) : this(context, null)
 
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
@@ -1138,7 +1150,7 @@ class TabLayout : HorizontalScrollView {
             }
 
             val scrollXForTab = calculateScrollXForTab(position, positionOffset)
-            Log.e("setScrollPosition", "scrollXForTab: $scrollXForTab")
+//            Log.e("setScrollPosition", "scrollXForTab: $scrollXForTab")
 
             scrollTo(scrollXForTab, 0)
 
