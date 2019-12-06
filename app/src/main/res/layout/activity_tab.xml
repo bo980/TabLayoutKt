@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.liang.tabs.TabLayout
+        android:id="@+id/tabLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_tablayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabDividerColor="@android:color/holo_orange_dark"
+        app:tabDividerHeight="40dp"
+        app:tabDividerWidth="1dp"
+        app:tabMode="fixed">
+
+        <com.liang.tablayoutkt.TabMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_bgl"
+            app:rippleColor="@color/holo_red"
+            android:textColor="@drawable/text_color_tab"
+            android:title="娱乐" />
+
+        <com.liang.tablayoutkt.TabMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_bgc"
+            app:rippleColor="#68C402"
+            android:textColor="@drawable/text_color_tab"
+            android:title="游戏" />
+
+        <com.liang.tablayoutkt.TabMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_bgc"
+            app:rippleColor="#46D1D1"
+            android:textColor="@drawable/text_color_tab"
+            android:title="排名" />
+
+        <com.liang.tablayoutkt.TabMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_bgr"
+            app:rippleColor="#022926"
+            android:textColor="@drawable/text_color_tab"
+            android:title="最新" />
+
+    </com.liang.tabs.TabLayout>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout1" />
+
+    <com.liang.tabs.TabLayout
+        android:id="@+id/tabLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/line1"
+        app:tabInlineLabel="true"
+        app:tabMode="fixed"
+        app:tabTextColor="@drawable/text_color_tab" />
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout2" />
+
+    <com.liang.tabs.TabLayout
+        android:id="@+id/tabLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/line2"
+        app:tabDividerColor="@android:color/holo_orange_dark"
+        app:tabDividerWidth="2dp"
+        app:tabMode="fixed"
+        app:tabTextColor="@drawable/text_color_tab" />
+
+    <View
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout3" />
+
+    <com.liang.tabs.TabLayout
+        android:id="@+id/tabLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/line3"
+        app:tabDividerColor="@android:color/holo_orange_dark"
+        app:tabDividerWidth="1dp"
+        app:tabIndicatorColor="@color/holo_red"
+        app:tabIndicatorHeight="2dp"
+        app:tabMode="fixed"
+        app:tabTextColor="@drawable/text_color_tab" />
+
+    <View
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout4" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager4"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toBottomOf="@id/line4" />
+
+    <View
+        android:id="@+id/line5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/viewPager4" />
+
+    <com.liang.tabs.TabLayout
+        android:id="@+id/tabLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/line5"
+        app:tabDividerColor="@android:color/holo_orange_dark"
+        app:tabDividerWidth="80dp"
+        app:tabIndicator="@drawable/tab_indicator_bg"
+        app:tabIndicatorColor="@color/color_tab_bg"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorHeight="5dp"
+        app:tabIndicatorTransitionScroll="true"
+        app:tabIndicatorWidth="5dp"
+        app:tabMode="scrollable"
+        app:tabScaleTransitionScroll="1.2"
+        app:tabTextColor="@drawable/text_color_tab"
+        app:tabTextColorTransitionScroll="true" />
+
+    <View
+        android:id="@+id/line6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout5" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager5"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toBottomOf="@id/line6" />
+
+    <View
+        android:id="@+id/line7"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@id/tabLayout6" />
+
+    <com.liang.tabs.TabLayout
+        android:id="@+id/tabLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tabTextColor="@drawable/text_color_tab" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
