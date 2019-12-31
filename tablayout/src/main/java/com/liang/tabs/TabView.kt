@@ -32,7 +32,7 @@ import com.liang.tabs.utils.getColorStateList
 import com.liang.tabs.utils.parseTintMode
 
 
-open class TabImp @JvmOverloads constructor(
+open class TabView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0

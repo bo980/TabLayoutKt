@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_tab.*
 
 class TabActivity : AppCompatActivity() {
 
-    private val titles4 = arrayOf("首页", "影视歌曲", "民生", "手机电脑数码", "其他")
+    private val titles4 = arrayOf("首页", "影视", "民生", "数码", "其他")
     private val titles5 = arrayOf("首页", "新闻", "影视歌曲", "民生", "数码", "娱乐", "排名", "消息", "我的", "其他")
 
     private var adapter4: ViewPagerAdapter? = null
@@ -118,8 +118,17 @@ class TabActivity : AppCompatActivity() {
 
 
     private fun initTab4() {
-        for (title: String in titles4) {
-            tabLayout4.addTab(tabLayout4.newTab().setTitle(title))
+
+        val decorations = listOf(
+            TestDecoration(),
+            ImgDecoration(this, R.mipmap.t1),
+            ImgDecoration(this, R.mipmap.t2),
+            ImgDecoration(this, R.mipmap.t3)
+        )
+
+        repeat(titles4.size) {
+            val index = it % decorations.size
+            tabLayout4.addTab(tabLayout5.newTab().setTitle(titles4[it]).setDecoration(decorations[index]))
         }
 
         tabLayout4.getTabAt(2)?.setTitleColor(Color.GRAY, Color.RED)
@@ -130,15 +139,15 @@ class TabActivity : AppCompatActivity() {
 
         tabLayout4.tabTextSize = (sp2px(15f))
 
-        tabLayout4.showBadgeMsg(8)
+        tabLayout4.showBadgeMsg(0)
 
     }
 
 
     private fun initTab5() {
 
-//        titles5.forEach {
-//            tabLayout5.addTab(tabLayout5.newTab().setTitle(it))
+//        repeat(titles5.size) {
+//            tabLayout5.addTab(tabLayout5.newTab().setTitle(titles5[it])))
 //        }
 
     }
@@ -195,12 +204,12 @@ class TabActivity : AppCompatActivity() {
     }
 
     private fun initViewPager() {
-        adapter4 = ViewPagerAdapter(this, titles4.toMutableList())
+//        adapter4 = ViewPagerAdapter(this, titles4.toMutableList())
         adapter5 = ViewPagerAdapter(this, titles5.toMutableList())
-        viewPager4.adapter = adapter4;
-        viewPager5.adapter = adapter5;
+//        viewPager4.adapter = adapter4
+        viewPager5.adapter = adapter5
 
-        tabLayout4.setupWithViewPager(viewPager4, false)
+//        tabLayout4.setupWithViewPager(viewPager4, false)
         tabLayout5.setupWithViewPager(viewPager5)
     }
 

@@ -1,14 +1,11 @@
 package com.liang.tablayoutkt
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.liang.tabs.BadgeView
-import com.liang.tabs.TabImp
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     var badgeView: BadgeView? = null

@@ -14,12 +14,12 @@ import androidx.annotation.Nullable;
 
 import com.liang.tabs.BadgeView;
 
-import com.liang.tabs.TabImp;
+import com.liang.tabs.TabView;
 
 import org.jetbrains.annotations.NotNull;
 
 
-public class TabMenu extends TabImp {
+public class TabMenu extends TabView {
 
     private View tabView;
 

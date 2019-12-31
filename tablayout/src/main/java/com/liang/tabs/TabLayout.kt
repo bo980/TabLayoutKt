@@ -244,9 +244,11 @@ class TabLayout : HorizontalScrollView {
     fun addItemDecoration(itemDecoration: ItemDecoration?) {
         this.itemDecoration = itemDecoration
         repeat(slidingTabIndicator.childCount) {
-            val child = slidingTabIndicator.getChildAt(it)
-            if (child is Tab) {
-                child.tabDecoration = child.tabDecoration ?: itemDecoration
+            if (it > 0) {
+                val child = slidingTabIndicator.getChildAt(it)
+                if (child is Tab) {
+                    child.tabDecoration = child.tabDecoration ?: itemDecoration
+                }
             }
         }
 
@@ -375,7 +377,7 @@ class TabLayout : HorizontalScrollView {
         tabDividerColor = typedArray.getColor(R.styleable.TabLayout_tabDividerColor, 0)
 
         itemDecoration =
-            if (tabDividerWidth > 0) TabImp.DefItemDecoration(
+            if (tabDividerWidth > 0) TabView.DefItemDecoration(
                 tabDividerWidth,
                 tabDividerHeight
             ).apply {
@@ -850,7 +852,7 @@ class TabLayout : HorizontalScrollView {
     }
 
     private fun createTabView(): Tab {
-        val tabView = TabImp(context)
+        val tabView = TabView(context)
         tabView.view.isFocusable = true
         tabView.view.minimumWidth = this.tabMinWidth
         return tabView
