@@ -32,7 +32,7 @@
             android:layout_marginLeft="5dp"
             android:ellipsize="end"
             android:gravity="center"
-            android:maxLines="1" />
+            android:maxLines="2" />
     </LinearLayout>
 
 

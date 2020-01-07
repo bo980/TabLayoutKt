@@ -66,6 +66,7 @@ class TabLayout : HorizontalScrollView {
                 ViewCompat.postInvalidateOnAnimation(slidingTabIndicator)
             }
         }
+
     var tabIndicatorFullWidth = false
         set(value) {
             if (field != value) {
@@ -913,7 +914,6 @@ class TabLayout : HorizontalScrollView {
 
     @JvmOverloads
     fun selectTab(tab: Tab, updateIndicator: Boolean = true, isCallback: Boolean = true) {
-        Log.e("Tab", "selectTab...")
         val currentTab = selectedTab
         if (currentTab === tab) {
             dispatchTabReselected(tab)

@@ -569,7 +569,6 @@ open class TabView @JvmOverloads constructor(
             }
 
         init {
-            Log.e("DefItemDecoration", "width: $width")
             paint.strokeWidth = width.toFloat()
         }
 
